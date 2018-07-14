@@ -1,9 +1,15 @@
-FROM php:7.0-apache
+FROM node as node_builder
 
-COPY ./ /var/www/html/
+WORKDIR /app
+COPY . /app
 
-RUN a2dissite 000-default.conf
-COPY ./999-default.conf /etc/apache2/sites-available/
-RUN a2ensite 999-default.conf
+RUN npm install
 
-RUN service apache2 reload
+FROM php:latest
+
+WORKDIR /app
+COPY --from=node_builder /app /app
+
+EXPOSE 8080
+
+ENTRYPOINT [ "php", "artisan", "serve", "--port", "8080", "--host", "0.0.0.0" ]

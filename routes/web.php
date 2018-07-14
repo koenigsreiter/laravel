@@ -26,19 +26,19 @@ Route::post('/login', ['uses' => 'AuthController@postLogin', 'as' => 'postLogin'
 Route::view('/leistungen', 'leistungen');
 
 
-Route::view('/vorsorge', 'Vorsorge');
-Route::view('/allgemeinmedizin', 'Allgemeinmedizin');
+Route::view('/vorsorge', 'vorsorge');
+Route::view('/allgemeinmedizin', 'allgemeinmedizin');
 
-Route::view('/ordination', 'Ordination');
-Route::view('/kontakt', 'Kontakt');
+Route::view('/ordination', 'ordination');
+Route::view('/kontakt', 'kontakt');
 
-Route::view('/vital', 'Vital');
+Route::view('/vital', 'vital');
 
-Route::view('/auth', 'Auth');
-Route::view('/auth_login', 'Auth_login');
+Route::view('/auth', 'auth');
+Route::view('/auth_login', 'auth_login');
 
 Route::view('/profil', 'profil');
 
-Route::view('/messenger', 'Messenger');
+Route::view('/messenger', 'messenger');
 
-Route::view('/kalender', 'Kalender');
+Route::view('/kalender', 'kalender');
