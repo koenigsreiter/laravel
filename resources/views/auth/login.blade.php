@@ -7,7 +7,7 @@
 
         <section class="wrapper_reg">
         <form id="login" method="POST" action="{{ route('postLogin') }}" autocomplete="off">
-
+            {{ csrf_field() }}
             <div class="form-group">
                 <label for="email"></label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>

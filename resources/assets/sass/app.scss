@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+
+
 
 .thin {font-weight:100;font-family: 'Raleway', sans-serif;}
 .bold, strong  {font-weight:600;font-family: 'Raleway', sans-serif;}
@@ -8,9 +12,10 @@
 }
 html,
 body {
+  font-family: Raleway, sans-serif;
   font-size: 16px;
   margin: 0;
-background-color: white;
+  background-color: white;
   padding: 0;
 }
 
@@ -83,7 +88,7 @@ a{
 
 .menu > ul > li > a {
   text-decoration: none;
-  font-family: Raleway sans-serif;
+
   font-size: 12px;
   font-weight: 500;
   color: white;
@@ -142,7 +147,7 @@ a{
 
   position: absolute;
   background-color: #3F7373;
-  top: 14%;
+
   width: 100%;
   display: none;
   z-index: 7;
@@ -183,10 +188,11 @@ hr{
   left:0;
 
 }
-.hero_all > img {
+.hero_all > picture {
 
   position: absolute;
   clip-path: circle(56% at 8% 38%);
+  height: 965px;
 }
 
 
@@ -203,11 +209,12 @@ hr{
 
       position: absolute;
       clip-path: circle(56% at 8% 38%);
+      left:-1px;
     }
+
 .ordinationszeiten >p{
 
   font-size: 9px;
-  font-family: Raleway sans-serif;
   text-align: center;
   top:50%;
 }
@@ -219,10 +226,16 @@ hr{
   text-align: center;
   position: absolute;
   left: 60%;
-  top: 17%;
-  line-height: 25px;
+  top: 13%;
+  line-height: 23px;
 }
+.ordinationszeiten > p > span {
 
+  font-weight: 600;
+  font-size: 10px;
+
+
+}
 /*home*/
 
 .kirk{
@@ -247,7 +260,8 @@ hr{
 
   font-size: 10px;
   text-align: end;
-  margin-bottom: 2em;
+  margin: 5px 5px 10px 22px;
+
 }
 
 .allgemein {
@@ -716,6 +730,15 @@ display: flex;
   top:51%;
 
 }
+
+
+.h1_privat{
+
+  text-align: center;
+
+  margin: 0;
+
+}
 /*Vital*/
 
 .vital{
@@ -887,6 +910,10 @@ option{
 
 }
 
+
+#beschwerden{
+  margin-bottom: 10px;
+}
 
 /*profil*/
 .beschwerden{
@@ -1086,11 +1113,12 @@ $gray: #92959E;
   padding: 1em;
 }
 .chat {
+
+  margin-top: 20px;
   width: 100%;
   float: left;
   background: #F2F5F8;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+    border-radius: 5px;
   color: #434651;
 
   .chat-header {
@@ -1229,4 +1257,327 @@ $gray: #92959E;
   content: " ";
   clear: both;
   height: 0;
+}
+
+
+
+
+///BACKEND
+
+
+.sidebar{
+
+  width: 35px;
+  height: 35px;
+  background-color: #2a2a2a;
+  border-radius: 2px;
+  position: absolute;
+  left:10px;
+  top:10px;
+
+}
+
+.icon_dash{
+
+  color: #818181;
+  padding: 7px 7px 7px 9px;
+
+}
+
+
+.icon_dash:hover{
+
+  color: white;
+
+}
+.sidenav {
+
+  height: 100%;
+  width: 120px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left:-200px;
+  background-color: #2a2a2a;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 4px 8px 4px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  line-height: 40px;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.wrapper_headline_dash{
+
+  background-color: lightgrey;
+  height: 60px;
+
+}
+.headline_dashboard{
+
+
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+
+
+}
+.headline_dashboard > h1{
+
+  font-size: 18px;
+}
+
+
+.icon_times{
+
+  color: #818181;
+  font-size: 16px;
+  padding-left: 88px;
+
+}
+
+.icon_times:hover{
+
+  color: white;
+}
+.section_last{
+
+
+padding-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.wrapper_last_patients{
+
+
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 170px;
+
+}
+
+.wrapper_last_messages{
+
+
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 170px;
+  margin-bottom: 30px;
+
+}
+.wrapper_last_patients > h2{
+
+  font-size: 14px;
+  text-align: center;
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 10px;
+
+
+
+}
+
+.last_patients{
+
+
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.last_patients > li {
+
+
+  font-size: 12px;
+  padding: 5px;
+}
+
+.hr_last{
+
+  border: 0.5px solid grey;
+  width: 100%;
+}
+.wrapper_last_patients > h3{
+  font-size: 14px ;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background-color: whitesmoke;
+
+
+}
+.wrapper_last_messages > h3{
+  font-size: 14px ;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background-color: whitesmoke;
+
+
+}
+
+.wrapper_last_messages > h3 >span{
+  color: red;
+
+
+}
+.calender_week{
+
+  padding-top: 30px;
+}
+.wrapper_calender_week{
+
+
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 100%;
+  height:200px;
+}
+
+.wrapper_calender_week > h3{
+
+  font-size: 14px ;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background-color: whitesmoke;
+
+
+}
+
+.grid_container{
+
+  display: grid;
+  grid: 50px / auto auto auto auto;
+  padding-top: 20px;
+  grid-row-gap: 5px;
+
+
+
+}
+.grid_container > div {
+
+  text-align: center;
+  font-size: 14px;
+  background-color: grey;
+ padding: 15px 5px 20px 5px;
+
+}
+
+.item4{
+
+  grid-column: 1 / 5;
+  font-size: 12px !important;
+  background-color: whitesmoke !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+.wrapper_patients{
+
+
+  padding: 20px;
+}
+
+.patient_edit > label{
+
+  padding-bottom: 20px;
+
+}
+
+
+.group{
+
+  padding-bottom: 30px;
+}
+
+
+.btn_edit{
+
+  background-color: grey;
+  border: none;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 3px;
+}
+.btn_edit:hover{
+
+  color: white;
+
+}
+
+
+
+.fa-pencil-alt:hover{
+
+  color: grey;
+
+}
+
+.patient_input{
+
+font-size: 12px;
+padding-bottom: 5px;
+  color: grey;
+
+}
+
+.name_patient{
+
+
+  max-width: 60px;
+}
+
+/********chatback*********/
+
+
+
+.people-list {
+  width: 100%;
+  float: left;
+
+  input {
+    border-radius: 3px;
+    border: none;
+    padding: 14px;
+    color: white;
+    background: #6A6C75;
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .list {
+    padding: 20px;
+    height: auto;
+    font-size: 12px;
+
+  }
+
+  .about {
+
+    margin-top: 8px;
+    background-color: #d8d8d8;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
 }

@@ -10,7 +10,7 @@
     <div class="ordinationszeiten">
 
         <p>
-            Ordinationszeiten
+            <span>Ordinationszeiten</span>
             <br>
             Mo 8.00 - 11.00 & 16.00 - 18.00
             Di 7.30 Blutabnahmen

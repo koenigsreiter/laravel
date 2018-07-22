@@ -40,8 +40,43 @@ $(".menu").hide();
         $('.ul_detail').slideToggle();
     })
 
+/*BACKEND DASH*/
 
 
 
+  $('.icon_dash').on('click', function () {
+      $('.sidenav').animate(
 
+          {left: 0}
+      )
+  })
+
+    $('.fa-times').on('click',function () {
+        $('.sidenav').animate(
+            {
+                left: "-200px"
+
+
+            }
+        )
+    })
+
+
+/****chat_back***/
+
+
+$(".chat").hide();
+
+
+    $('.list').find('.about').on('click',function(){
+
+        //Expand or collapse this panel
+        $(this).next().slideToggle('fast');
+
+        //Hide the other panels
+        $(".content_p").not($(this).next()).slideUp('fast');
+
+        // language=JQuery-CSS
+
+    });
 });

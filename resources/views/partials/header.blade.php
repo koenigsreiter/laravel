@@ -43,12 +43,12 @@
 
                     <a href="{{ (URL::to('allgemeinmedizin')) }}">Allgemeinmedizin</a>
                     <hr>
-                    <a href="#">Privatleistungen & Ganzheitsmedizin</a>
+                    <a href="{{ (URL::to('privatleistungen')) }}">Privatleistungen & Ganzheitsmedizin</a>
                     <hr>
-                    <a href="#">  Schularzt</a>
+                    <a href="{{ (URL::to('schularzt')) }}">  Schularzt</a>
 
                     <hr>
-                    <a href="#">Arbeitsmedizin</a>
+                    <a href="{{ (URL::to('arbeitsmedizin')) }}">Arbeitsmedizin</a>
                     <hr>
                 </div>
 

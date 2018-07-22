@@ -10,7 +10,7 @@
 
         <form method="POST" action="{{ route('postRegister') }}" autocomplete="off">
 
-            {{ csrf_field() }}
+            @csrf
 
             <div class="form-group">
 
@@ -60,16 +60,11 @@
 
             <div class="form-group">
                 <label for="beschwerden"></label>
-                <select  id="beschwerden" name="beschwerden" multiple>
-                    <option value="" disabled selected hidden>Beschwerden</option>
-                    <option value="">Beschwerde1</option>
-                    <option value="">Beschwerde2</option>
-                    <option value="">Beschwerde3</option>
-                    <option value="">Beschwerde4</option>
-                    <option value="">Beschwerde5</option>
-
-                </select>
-
+                <input type="text" name="beschwerden" id="beschwerden" class="form-control" placeholder="Beschwerde1" required>
+                <input type="text" name="beschwerden" id="beschwerden" class="form-control" placeholder="Beschwerde2" required>
+                <input type="text" name="beschwerden" id="beschwerden" class="form-control" placeholder="Beschwerde3" >
+                <input type="text" name="beschwerden" id="beschwerden" class="form-control" placeholder="Beschwerde4" >
+                <input type="text" name="beschwerden" id="beschwerden" class="form-control" placeholder="Beschwerde5" >
             </div>
 
             <div class="button_reg">

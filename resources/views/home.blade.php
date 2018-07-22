@@ -7,14 +7,14 @@
   <main class="kirk">
 
 
-      <section >
+      <section>
         <div class="wrapper-kirk">
               <div class="content-kirk">
     
                  <h3 class="size">Dr.med.Fiona Kirk <br>Ärztin für Allgemeinmedizin</h3>
                  <p class="allgemein">
                      Praktischer Arzt, Notarzt, Arbeitsmedizin, Geriatrie, Schularzt, Palliativ Medizin,
-                     <br>komplementäre Krebsbegleittherapien,<br>
+                     komplementäre Krebsbegleittherapien,
                      Orthomolekulare Medizin,<br>
                      Sachverständiger Arzt gemäß §34 <br>Führerscheingesetz
                  </p>

@@ -14,31 +14,46 @@
 Route::get('/', ['uses' => 'HomeController@root', 'as' => 'root']);
 Route::get('/home', ['uses' => 'HomeController@home', 'as' => 'home']);
 
-Route::get('/reg', ['uses' => 'AuthController@getRegister', 'as' => 'getRegister']);
-Route::post('/reg', ['uses' => 'AuthController@postRegister', 'as' => 'postRegister']);
+Route::get('/auth', ['uses' => 'AuthController@getRegister', 'as' => 'getRegister']);
+Route::post('/auth', ['uses' => 'AuthController@postRegister', 'as' => 'postRegister']);
 
 
-Route::get('/login', ['uses' => 'AuthController@getLogin', 'as' => 'getLogin']);
+Route::get('/auth_login', ['uses' => 'AuthController@getLogin', 'as' => 'getLogin']);
 
-Route::post('/login', ['uses' => 'AuthController@postLogin', 'as' => 'postLogin']);
-
-
-Route::view('/leistungen', 'leistungen');
+Route::post('/auth_login', ['uses' => 'AuthController@postLogin', 'as' => 'postLogin']);
 
 
-Route::view('/vorsorge', 'vorsorge');
-Route::view('/allgemeinmedizin', 'allgemeinmedizin');
+Route::get('/leistungen', ['uses' => 'LeistungenController@leistungen', 'as' => 'Leistugen']);
 
-Route::view('/ordination', 'ordination');
-Route::view('/kontakt', 'kontakt');
+Route::get('/vorsorge', ['uses' => 'VorsorgeController@vorsorge', 'as' => 'Vorsorge']);
 
-Route::view('/vital', 'vital');
+Route::get('/allgemeinmedizin', ['uses' => 'AllgemeinController@allgemein', 'as' => 'Allgemein']);
+Route::get('/privatleistungen', ['uses' => 'PrivatController@privat', 'as' => 'Privatleistugnen']);
+Route::get('/schularzt', ['uses' => 'SchularztController@schularzt', 'as' => 'Schularzt']);
+Route::get('/notfallmedizin', ['uses' => 'NotfallmedizinController@notfall', 'as' => 'Notfallmedizin']);
+Route::get('/arbeitsmedizin', ['uses' => 'ArbeitsmedizinController@arbeit', 'as' => 'Arbeitsmedizin']);
 
-Route::view('/auth', 'auth');
-Route::view('/auth_login', 'auth_login');
 
-Route::view('/profil', 'profil');
 
-Route::view('/messenger', 'messenger');
+Route::get('/ordination', ['uses' => 'OrdinationController@ordination', 'as' => 'Ordination']);
 
-Route::view('/kalender', 'kalender');
+Route::get('/kontakt', ['uses' => 'KontaktController@kontakt', 'as' => 'Kontakt']);
+Route::get('/vital', ['uses' => 'VitalController@vital', 'as' => 'Vital']);
+
+Route::get('/profil', ['uses' => 'ProfilController@profil', 'as' => 'Profil']);
+
+Route::get('/messenger', ['uses' => 'MessengerController@messenger', 'as' => 'Messenger']);
+Route::get('/kalender', ['uses' => 'KalenderController@kalender', 'as' => 'Kalender']);
+Route::post('/kalender', ['uses' => 'KalenderKontroller@newAppointment', 'as' => 'NewAppointment']);
+
+
+
+
+
+
+Route::get('/dashboard', ['uses' => 'BackendController@backend', 'as' => 'Dashboard']);
+
+Route::get('/patients', ['uses' => 'PatientsController@patients', 'as' => 'Patients']);
+Route::get('/patients_edit', ['uses' => 'PatientsController@edit', 'as' => 'Patients_edit']);
+Route::get('/messagesback', ['uses' => 'MessagesBackController@messagesback', 'as' => 'Messages']);
+Route::get('/calender_backend', ['uses' => 'CalenderBackendController@calender_backend', 'as' => 'Calender']);

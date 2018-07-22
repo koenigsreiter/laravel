@@ -1,7 +1,11 @@
 <div class="hero_all">
 
+<picture>
 
+<source  media="(min-width: 700px)"  srcset="{{ asset('images/header_groß.png')}}">
     <img src="{{ asset('images/hero.png')}} " height="265px" width="100%">
+</picture>
+
 
 
 
