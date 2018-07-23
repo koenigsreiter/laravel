@@ -18,7 +18,7 @@
         <div class="chat">
 
             <div class="chat-history">
-                <ul>
+                <ul id="chatList">
                     <li class="clearfix">
                         <div class="message-data align-right">
                             <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
@@ -68,7 +68,7 @@
 
             <div class="chat-message clearfix">
                 <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
-                <button>Senden</button>
+                <button id="sendMsg">Senden</button>
 
             </div> <!-- end chat-message -->
 
@@ -76,6 +76,55 @@
 
     </div> <!-- end container -->
 
+    <script>
+    
+        const username = "{{ Auth::user()->name }}";
+        $("#sendMsg").click(() => {
+            console.log("Button Clicked!");
+            $.post("/api/messages/1", {
+                user: username,
+                data: $("#message-to-send").val(),
+                date: new Date(),
+            }, (result) => {
+                console.log(result);
+                $("#message-to-send").val("");
+            });
+        });
+
+        setInterval(() => {
+            $.getJSON("/api/messages/{{ Auth::id() }}", (result) => {
+                $("#chatList").empty();
+                $.each(result, (key, value) => {
+                    if (value.user !== username) {
+                        $("#chatList").append(`
+                        <li class="clearfix">
+                            <div class="message-data align-right">
+                                <span class="message-data-time" >${ value.date }</span> &nbsp; &nbsp;
+                            </div>
+                            <div class="message other-message float-right">
+                               ${ value.data }
+                            </div>
+                        </li>
+                        `);
+                    } else {
+                        $("#chatList").append(`
+                        <li>
+                            <div class="message-data">
+                                <span class="message-data-name"><i class="fa fa-circle online"></i> ${username}</span>
+                                <span class="message-data-time">${ value.date }</span>
+                            </div>
+                            <div class="message my-message">
+                                ${ value.data }
+                            </div>
+                        </li>
+                        `);
+                    }
+                })
+            })
+        }, 5000);
+
+    
+    </script>
 
 
 </main>

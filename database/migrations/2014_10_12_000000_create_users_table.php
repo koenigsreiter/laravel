@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->integer('zipCode');
             $table->string('complaints');
+            $table->string('messages');
             $table->rememberToken();
             $table->timestamps();
         });

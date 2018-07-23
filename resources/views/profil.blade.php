@@ -19,7 +19,8 @@
 
         <div class="form-group">
 
-            <input type="text" class="form-control" id="fname" name="vorname" placeholder="Vorname" required>
+            <input type="text" class="form-control" id="fname" name="vorname" placeholder="Vorname" required 
+                    value="{{ explode(' ', Auth::user()->name)[0] }}">
 
 
         </div>
@@ -27,13 +28,15 @@
 
         <div class="form-group">
             <label for="lname"></label>
-            <input type="text" class="form-control" id="lname" name="nachname" placeholder="Nachname" required>
+            <input type="text" class="form-control" id="lname" name="nachname" placeholder="Nachname" required 
+                    value="{{ explode(' ', Auth::user()->name)[1] }}">
 
         </div>
 
         <div class="form-group">
             <label for="email"></label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required
+                    value="{{ Auth::user()->email }}">
 
         </div>
         <div class="form-group">
@@ -46,18 +49,21 @@
 
             <div class="form-group">
                 <label for="adresse"></label>
-                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse" required>
+                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse" required
+                    value="{{ Auth::user()->street }}">
 
             </div>
             <div class="form-group">
                 <label for="ort"></label>
-                <input type="text" class="form-control" id="ort" name="ort" placeholder="Ort" required>
+                <input type="text" class="form-control" id="ort" name="ort" placeholder="Ort" required
+                    value="{{ Auth::user()->city }}">
 
             </div>
 
             <div class="form-group">
                 <label for="plz"></label>
-                <input type="text" class="form-control" id="plz" name="plz" placeholder="PLZ" required>
+                <input type="text" class="form-control" id="plz" name="plz" placeholder="PLZ" required
+                    value="{{ Auth::user()->zipCode }}">
 
             </div>
 

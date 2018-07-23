@@ -64,6 +64,17 @@
 
             <hr>
 
+            @if( Auth::check() ) 
+
+                <li><a href="{{ (URL::to('profil')) }}">Profil</a></li>
+                <hr>
+                <li><a href="{{ (URL::to('messenger')) }}">Messenger</a></li>
+                <hr>
+                <li><a href="{{ (URL::to('kalender')) }}">Kalender</a></li>
+                <hr>
+
+            @endif
+
         </ul>
 
         <ul class="navbar-login">

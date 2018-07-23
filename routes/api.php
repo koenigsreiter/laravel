@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/messages/{id}', ['uses' => 'MessagesController@getMessages', 'as' => 'GetMessages']);
+Route::post('/messages/{id}', ['uses' => 'MessagesController@newMessage', 'as' => 'newMessage']);

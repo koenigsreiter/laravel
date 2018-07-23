@@ -16,10 +16,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'street', 'city', 'zipCode',
-        'complaints'
+        'complaints', 'messages'
     ];
 
     protected $casts = [
+        'messages' => 'array',
         'complaints' => 'array',
     ];
 
@@ -29,6 +30,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+       'password', 'remember_token',
     ];
 }

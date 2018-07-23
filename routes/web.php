@@ -21,6 +21,7 @@ Route::post('/auth', ['uses' => 'AuthController@postRegister', 'as' => 'postRegi
 Route::get('/auth_login', ['uses' => 'AuthController@getLogin', 'as' => 'getLogin']);
 
 Route::post('/auth_login', ['uses' => 'AuthController@postLogin', 'as' => 'postLogin']);
+Route::get('/logout', ['uses' => 'AuthController@logout', 'as' => 'logout']);
 
 
 Route::get('/leistungen', ['uses' => 'LeistungenController@leistungen', 'as' => 'Leistugen']);
@@ -44,7 +45,7 @@ Route::get('/profil', ['uses' => 'ProfilController@profil', 'as' => 'Profil']);
 
 Route::get('/messenger', ['uses' => 'MessengerController@messenger', 'as' => 'Messenger']);
 Route::get('/kalender', ['uses' => 'KalenderController@kalender', 'as' => 'Kalender']);
-Route::post('/kalender', ['uses' => 'KalenderKontroller@newAppointment', 'as' => 'NewAppointment']);
+Route::post('/kalender', ['uses' => 'KalenderController@newAppointment', 'as' => 'NewAppointment']);
 
 
 

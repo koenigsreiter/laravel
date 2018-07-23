@@ -38,10 +38,12 @@ class AuthController extends Controller
             // create our user data for the authentication
             $userdata = array(
                 'email' => Input::get('email'),
-                'password' => Hash::make(Input::get('password'))
+                'password' => Input::get('password')
             );
 
-            if (!Auth::attempt($userdata)) {
+            if (Auth::attempt($userdata)) {
+                return redirect()->route('Profil');
+            } else {
                 return redirect()
                     ->route('getLogin')
                     ->withErrors($validator)
@@ -49,7 +51,6 @@ class AuthController extends Controller
             }
         }
 
-        return redirect()->route('Profil');
     }
 
 
@@ -83,12 +84,19 @@ class AuthController extends Controller
             $user->street = Input::get('adresse');
             $user->city = Input::get('ort');
             $user->zipCode = Input::get('plz');
-            $user->complaints = Input::get('beschwerden');
+            $complaints = array();
+            foreach (Input::all() as $key => $value) {
+                if ($key == "beschwerden") {
+                    $complaints[] = $value;
+                }
+            }
+            $user->complaints = $complaints;
+            $user->messages = array();
             $user->save();
 
             $userdata = array(
                 'email' => $user->email,
-                'password' => $user->password
+                'password' => Input::get('password')
             );
 
             if (!Auth::attempt($userdata)) {
@@ -96,5 +104,10 @@ class AuthController extends Controller
             }
         }
         return redirect()->route('Profil');
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('home');
     }
 }

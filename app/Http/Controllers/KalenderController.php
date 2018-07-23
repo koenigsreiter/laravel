@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use App\Appointment;
 
-class KAlenderController extends Controller
+class KalenderController extends Controller
 {
 
 
@@ -30,7 +31,7 @@ class KAlenderController extends Controller
             $appointment = new Appointment;
             $appointment->dateTime = strtotime(Input::get('appointment_date') . ' ' . Input::get('appointment_time'));
             $appointment->confirmed = false;
-            $appointment->user = Auth::user();
+            $appointment->user_id = Auth::id();
             $appointment->save();
         }
         return redirect()->route('Kalender');

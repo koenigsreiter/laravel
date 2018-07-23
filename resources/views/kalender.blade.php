@@ -15,6 +15,7 @@
     <div class="wrapper_kalender">
         <div class="kalender_content">
             <form action="/kalender" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="appointment_date"></label>
                     <input type="date" id="appointment_date" name="appointment_date" placeholder="Datum" required>

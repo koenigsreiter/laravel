@@ -8,7 +8,7 @@ class Appointment extends Model
 {
 
     protected $fillable = [
-        "sateTime", "confirmed", "user"
+        "dateTime", "confirmed", "user_id"
     ];
     
     public function user() {
