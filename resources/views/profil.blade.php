@@ -91,14 +91,15 @@
     </div>
     </div>
     <section>
+    @foreach($appointments as $appointment)
         <ul class="wrapper_reg">
-            <li>Datum <hr class="hr_profil"></li>
+            <li>Datum {{{ date('d.m.Y', $appointment->dateTime) }}}<hr class="hr_profil"></li>
 
-            <li>Uhrzeit<hr class="hr_profil"></li>
-            <li>Behandlung<hr class="hr_profil"></li>
+            <li>Uhrzeit {{{ date('H:i', $appointment->dateTime) }}}<hr class="hr_profil"></li>
+            <li>Behandlung <hr class="hr_profil"></li>
 
         </ul>
-
+    @endforeach
     </section>
 </main>
 
