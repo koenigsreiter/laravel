@@ -80,8 +80,7 @@
     
         const username = "{{ Auth::user()->name }}";
         $("#sendMsg").click(() => {
-            console.log("Button Clicked!");
-            $.post("/api/messages/1", {
+            $.post("/api/messages/{{ Auth::id() }}", {
                 user: username,
                 data: $("#message-to-send").val(),
                 date: new Date(),
@@ -121,7 +120,7 @@
                     }
                 })
             })
-        }, 5000);
+        }, 2000);
 
     
     </script>

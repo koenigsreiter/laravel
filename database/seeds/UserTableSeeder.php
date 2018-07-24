@@ -15,10 +15,22 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $complaints = ['Rückenschmerzen', '', '', '', ''];
+
+        $fiona = new User();
+        $fiona->name = 'Fiona Kirk';
+        $fiona->email = 'fiona@kirk.at';
+        $fiona->password = Hash::make('adminpw');
+        $fiona->street = 'Musterstraße 10';
+        $fiona->city = 'Musterstadt';
+        $fiona->zipCode = 6969;
+        $fiona->complaints = [];
+        $fiona->messages = [];
+        $fiona->save();
+
         $user = new User();
         $user->name = 'Simon Königsreiter';
         $user->email = 'simon.koenigsreiter@gmail.com';
-        $user->password = Hash::make('bmw850gs');
+        $user->password = Hash::make('passw0rd');
         $user->street = 'Austraße 10/2';
         $user->city = 'Kottingbrunn';
         $user->zipCode = 2542;

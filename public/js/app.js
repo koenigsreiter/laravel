@@ -128,7 +128,8 @@ $(document).ready(function () {
 
     /****chat_back***/
 
-    $(".chat").hide();
+    //$(".chat").hide();
+
 
     $('.list').find('.about').on('click', function () {
 

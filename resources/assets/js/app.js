@@ -17,7 +17,7 @@
 
 $(document).ready(function(){
 
-$(".menu").hide();
+    $(".menu").hide();
 
 
 
@@ -65,7 +65,7 @@ $(".menu").hide();
 /****chat_back***/
 
 
-$(".chat").hide();
+    //$(".chat").hide();
 
 
     $('.list').find('.about').on('click',function(){

@@ -20,24 +20,26 @@
 
                 <div class="group">
                     <label for="patient_name">Name</label>
-                    <input type="text" class="patient_input" id="patient_name" name="patient_name" value="Alex Blum">
+                    <input type="text" class="patient_input" id="patient_name" name="patient_name" value="{{{ $user->name }}}">
 
 
                 </div>
 
                 <div class="group">
                     <label for="patient_beschwerden">Beschwerden</label>
-                    <input type="text"  class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="Rückenschmerzen">
-                    <input type="text" class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="Migräne">
-                    <input type="text" class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="Erbrechen">
-
-
+                    <input type="text"  class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="{{{ $user->complaints[0] }}}">
+                    <input type="text"  class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="{{{ $user->complaints[1] }}}">
+                    <input type="text"  class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="{{{ $user->complaints[2] }}}">
+                    <input type="text"  class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="{{{ $user->complaints[3] }}}">
+                    <input type="text"  class="patient_input" id="patient_beschwerden" name="patient_beschwerde" value="{{{ $user->complaints[4] }}}">
                 </div>
 
                 <div class="group">
                     <label for="termin">Termin</label>
-                    <input type="text" class="patient_input"    name="termin" id="termin" value="17.7.2018- 20.7.2018" >
-
+                    @foreach($appointments as $appointment)
+                        <input type="text" class="patient_input" name="termin" id="termin" 
+                            value="{{{ date('d.m.Y H:i:s', $appointment->dateTime) }}}" >
+                    @endforeach
 
                 </div>
                 <div class="group">
