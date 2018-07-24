@@ -37,4 +37,16 @@ class KalenderController extends Controller
         return redirect()->route('Kalender');
     }
 
+    public function accept($id) {
+        $appointment = Appointment::find($id);
+        $appointment->confirmed = true;
+        $appointment->save();
+        return "success";
+    }
+
+    public function deny($id) {
+        Appointment::find($id)->delete();
+        return "success";
+    }
+
 }

@@ -19,3 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/messages/{id}', ['uses' => 'MessagesController@getMessages', 'as' => 'GetMessages']);
 Route::post('/messages/{id}', ['uses' => 'MessagesController@newMessage', 'as' => 'newMessage']);
+
+Route::post('/appointment/{id}/accept', ['uses' => 'KalenderController@accept', 'as' => 'AcceptAppointment']);
+Route::post('/appointment/{id}/deny', ['uses' => 'KalenderController@deny', 'as' => 'DenyAppointment']);
